@@ -20,3 +20,15 @@ code {
   transform: translateY(-50%) translateX(-50%);    /* 要素自体の半分、上と左にずらす */
   padding: 50px 60px;              /* 余白指定 */
 }
+
+.Button-style {
+  font-size: 18px;
+  display: inline-block;
+  padding: 0.4em 1em 0.2em;
+  color: #ffffff;
+  border: #ffffff dashed 1px;
+  box-shadow: 0 0 0 0.2em #ff99cc;
+  border-radius: 2.5px;
+  background-color: #ff99cc;
+  cursor: pointer;
+}
