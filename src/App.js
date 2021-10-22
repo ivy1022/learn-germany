@@ -2,15 +2,24 @@ import React from 'react';
 
 
 class Phrase extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = 'start!';
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      text:"Let's start!!"
+    };    
+  }
 
   handleClick() {
     this.setState({});
   }
-  
+
+  onClickButton = () => {
+    // setState で state を更新する
+    // this.setState() の引数には、変更したい state の対象を
+    // オブジェクトで指定する
+    this.setState({ text: "Next!" });
+  };
+
   render() { 
     const words = [
       {gn:'Das ist nicht mein Bier.', litterally: 'That is not my beer.', meaning:'I’m not interested; I don’t like it.'},
@@ -26,14 +35,14 @@ class Phrase extends React.Component {
     const mapWords = words[Math.floor( Math.random() * words.length)];
 
     return (
-      <div className="phrase-box">
+      <div className="phrase-box"　>
         Today's German phrase
         <h1>"{ mapWords.gn }"</h1> is litterally
         <h2>"{ mapWords.litterally}"</h2> meaning
         <h2>"{ mapWords.meaning }"</h2>
         <button className="Button-style" onClick = {() => {
           this.handleClick();
-        }}> next!</button>
+        }}> <p onClick={this.onClickButton}>{this.state.text}</p></button>
       </div>
   );
   }
